@@ -23,7 +23,7 @@ else:
         os.system('clear')
 
         # Run a round of questions for that level
-        score = func.display_AdditionQ(level, num_questions)
+        score = func.display_Questions(level, num_questions, 'subtract')
         total_score += score
         if score >= int(0.8 * num_questions):
             result = "PASSED"
