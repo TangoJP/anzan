@@ -3,8 +3,8 @@
 import os
 import functions as func
 
-num_questions = 10
-max_level = 5
+num_questions = 3
+max_level = 2
 
 os.system('clear')
 print("=====================================================")
@@ -29,24 +29,11 @@ else:
             result = "PASSED"
         else:
             result = "FAILED"
-        print("===================================")
-        print("     YOUR RESULT IS OUT!")
-        print("         Score: %d / %d" % (score, num_questions))
-        print("      Total Score: %d / %d" % (total_score, level * num_questions))
-        print("     You ", result, " Level %d" % level)
-        print("===================================")
-        print("")
-
+        func.display_round_result(level, num_questions, score, total_score, result)
 
         if result == "PASSED":
             if level == max_level:
-                print("     YOU PASSED ALL THE LEVELS!")
-                print("")
-                print("         CONGRATULATIONS!")
-                print("      Total Score: %d / %d" % (total_score, level * num_questions))
-                print("")
-                print("========= END OF GAME =============")
-                print("")
+                func.display_all_levels_passed(level, num_questions, total_score)
                 break
             else:
                 level_up = input("Wanna Move On to the Next Level? y / n\n")
@@ -56,12 +43,5 @@ else:
                     break
                 level += 1
         else:
-            print("     END OF YOUR CHALLENGE :( ")
-            print("")
-            print("         Last Level Passed: %d" % (level-1))
-            print("       Total Score: %d / %d" % (total_score, level * num_questions))
-            print("      TRY AGAIN ANOTHER TIME!")
-            print("")
-            print("========= END OF GAME ==========")
-            print("")
+            func.display_levels_incomplete(level, num_questions, total_score)
             break

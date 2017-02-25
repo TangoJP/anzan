@@ -36,3 +36,30 @@ def display_Questions(level, num_questions, qtype):
         os.system('clear')
 
     return score
+
+def display_round_result(level, num_questions, score, total_score, result):
+    print("===================================")
+    print("     You ", result, " Level %d" % level)
+    print("         Score: %d / %d" % (score, num_questions))
+    print("      Total Score: %d / %d" % (total_score, level * num_questions))
+    print("===================================")
+    print("")
+
+def display_all_levels_passed(level, num_questions, total_score):
+    print("         CONGRATULATIONS!")
+    print("     YOU PASSED ALL THE LEVELS!")
+    print("")
+    print("      Total Score: %d / %d" % (total_score, level * num_questions))
+    print("")
+    print("========= END OF GAME =============")
+    print("")
+
+def display_levels_incomplete(level, num_questions, total_score):
+    print("    YOUR CHALLENGE IS OVER... :( ")
+    print("")
+    print("     Highest Level Passed: %d" % (level-1))
+    print("       Total Score: %d / %d" % (total_score, level * num_questions))
+    print("      TRY AGAIN ANOTHER TIME!")
+    print("")
+    print("========= END OF GAME ============")
+    print("")
